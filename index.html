@@ -1,1 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikkam Designs StudioX | Luxury Interior Design Studio — Bengaluru</title>
+  <meta name="description" content="Nikkam Designs StudioX is a luxury interior design studio based in Bengaluru specializing in modern, minimal, and refined residential and commercial interiors.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Remix Icons for subtle minimal icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
+  <style>
+    /* CSS RESET & VARIABLES */
+    :root {
+      --bg-primary: #fbf9f5;      /* Warm Ivory */
+      --bg-secondary: #f4f0e8;    /* Muted Beige Surface */
+      --bg-card: #f8f5ee;         /* Light Sand */
+      --bg-dark: #141312;         /* Deep Charcoal Dark Mode elements */
+      
+      --text-main: #1c1b18;       /* Deep Charcoal */
+      --text-muted: #6e6a63;      /* Muted Warm Grey */
+      --text-light: #e8e4dc;      /* Light Off-White for dark blocks */
+      
+      --accent-champagne: #b89d79;/* Subtle Champagne Bronze */
+      --accent-hover: #9b815f;
+      --border-subtle: rgba(28, 27, 24, 0.1);
+      --border-dark: rgba(255, 255, 255, 0.12);
+      
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      --transition-fast: all 0.25s ease;
+      --container-width: 1380px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    button {
+      font-family: var(--font-sans);
+      cursor: pointer;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    /* TYPOGRAPHY UTILITIES */
+    .font-serif { font-family: var(--font-serif); }
+    .label-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-champagne);
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    /* HEADER / NAVIGATION */
+    header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.8rem 0;
+      transition: var(--transition-smooth);
+    }
+
+    header.site-header.scrolled {
+      background: rgba(251, 249, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      font-weight: 400;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--accent-champagne);
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta-btn {
+      padding: 0.75rem 1.6rem;
+      border: 1px solid var(--text-main);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      transition: var(--transition-fast);
+      background: transparent;
+      border-radius: 0px;
+    }
+
+    .nav-cta-btn:hover {
+      background: var(--text-main);
+      color: var(--bg-primary);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--text-main);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.72) contrast(1.05);
+      transform: scale(1.03);
+      animation: heroZoom 20s infinite alternate ease-in-out;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(20,19,18,0.4) 0%, rgba(20,19,18,0.2) 60%, rgba(20,19,18,0.7) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 2.8rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.4rem;
+      background-color: var(--accent-champagne);
+      color: #ffffff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--accent-champagne);
+      transition: var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 1rem 2.4rem;
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: var(--transition-fast);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      gap: 0.6rem;
+    }
+
+    .scroll-indicator .line {
+      width: 1px;
+      height: 35px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    @keyframes scrollPulse {
+      0% { transform: scaleY(0.2); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* SECTION LAYOUTS */
+    section {
+      padding: 8rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 4.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--text-main);
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      background-color: var(--bg-primary);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 2rem;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+    }
+
+    .about-image-wrapper img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -2rem;
+      left: -2rem;
+      background: var(--bg-secondary);
+      padding: 2.5rem;
+      border: 1px solid var(--border-subtle);
+      max-width: 280px;
+    }
+
+    .about-badge p {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--text-main);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    /* PROJECTS / PORTFOLIO SECTION */
+    .projects-section {
+      background-color: var(--bg-primary);
+    }
+
+    .project-filters {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 0.75rem;
+      position: relative;
+      transition: var(--transition-fast);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .filter-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent-champagne);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2.5rem;
+    }
+
+    .project-card {
+      grid-column: span 6;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      group: relative;
+    }
+
+    .project-card.wide {
+      grid-column: span 12;
+    }
+
+    .project-card.narrow {
+      grid-column: span 6;
+    }
+
+    .project-img-container {
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      position: relative;
+      background-color: var(--bg-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card.wide .project-img-container {
+      height: 640px;
+    }
+
+    .project-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .project-card:hover .project-img-container img {
+      transform: scale(1.05);
+    }
+
+    .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 19, 18, 0.25);
+      opacity: 0;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-card:hover .project-card-overlay {
+      opacity: 1;
+    }
+
+    .view-btn-hover {
+      padding: 0.8rem 1.8rem;
+      background: var(--bg-primary);
+      color: var(--text-main);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transform: translateY(10px);
+      transition: var(--transition-fast);
+    }
+
+    .project-card:hover .view-btn-hover {
+      transform: translateY(0);
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--text-main);
+    }
+
+    .project-location {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .project-category-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-champagne);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* PROJECT DETAIL MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 14, 13, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .modal-container {
+      background-color: var(--bg-primary);
+      max-width: 1100px;
+      margin: 4rem auto;
+      position: relative;
+      padding: 4rem;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      border: 1px solid var(--border-subtle);
+      animation: modalSlide 0.5s ease;
+    }
+
+    @keyframes modalSlide {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      z-index: 10;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--accent-champagne);
+    }
+
+    .modal-hero-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      margin-bottom: 3rem;
+    }
+
+    .modal-header-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+
+    .modal-meta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-left: 1px solid var(--border-subtle);
+      padding-left: 2rem;
+    }
+
+    .modal-meta-item label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .modal-meta-item span {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .modal-materials {
+      background-color: var(--bg-secondary);
+      padding: 2.5rem;
+      margin: 3rem 0;
+
+    }
+
+    .modal-materials h4 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+    }
+
+    .materials-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .mat-tag {
+      padding: 0.5rem 1.2rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      background-color: var(--bg-secondary);
+    }
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 80px 1.5fr 2fr;
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      align-items: baseline;
+      transition: var(--transition-fast);
+    }
+
+    .service-item:first-child {
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .service-item:hover {
+      padding-left: 1.5rem;
+    }
+
+    .service-num {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--accent-champagne);
+    }
+
+    .service-name {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--text-main);
+    }
+
+    .service-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* DESIGN PHILOSOPHY */
+    .philosophy-section {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .philosophy-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 2rem;
+    }
+
+    .philosophy-bullets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .philo-card h5 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--accent-champagne);
+      font-weight: 400;
+      margin-bottom: 0.6rem;
+    }
+
+    .philo-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* PROCESS SECTION */
+    .process-section {
+      background-color: var(--bg-primary);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .process-card {
+      padding: 2.5rem 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .process-step-num {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      color: var(--accent-champagne);
+      line-height: 1;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .process-step-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    .process-step-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* INSTAGRAM / VISUAL JOURNAL */
+    .journal-section {
+      background-color: var(--bg-secondary);
+      padding-bottom: 6rem;
+    }
+
+    .journal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+    }
+
+    .insta-handle-link {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-champagne);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--accent-champagne);
+      padding-bottom: 0.3rem;
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .insta-card {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .insta-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .insta-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .insta-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 19, 18, 0.4);
+      opacity: 0;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.5rem;
+    }
+
+    .insta-card:hover .insta-overlay {
+      opacity: 1;
+    }
+
+    /* CONSULTATION BANNER CTA */
+    .cta-banner {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+      padding: 7rem 1.5rem;
+    }
+
+    .cta-banner-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+    }
+
+    .cta-banner-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+      background-color: var(--bg-primary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 6rem;
+    }
+
+    .contact-info-box {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .contact-detail-item h6 {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-champagne);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-detail-item p, .contact-detail-item a {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* FORM STYLES */
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.9rem 0;
+      font-family: var(--font-sans);
+      font-size: 0.98rem;
+      color: var(--text-main);
+      transition: var(--transition-fast);
+      border-radius: 0;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-bottom-color: var(--accent-champagne);
+    }
+
+    select.form-control {
+      cursor: pointer;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .submit-btn-wrapper {
+      grid-column: span 2;
+      margin-top: 1rem;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      padding: 5rem 0 3rem 0;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-brand .brand-name {
+      color: #ffffff;
+      font-size: 1.6rem;
+    }
+
+    .footer-brand .brand-subtitle {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 4rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-champagne);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+      .about-grid, .philosophy-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .about-badge {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 1.5rem;
+      }
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 5rem 0; }
+      
+      .nav-links {
+        display: none; /* Can be toggled via mobile drawer */
+      }
+      .mobile-toggle { display: block; }
+
+      .project-card, .project-card.narrow {
+        grid-column: span 12;
+      }
+      
+      .project-img-container, .project-card.wide .project-img-container {
+        height: 380px;
+      }
+
+      .service-item {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+
+      .philosophy-bullets {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width, .submit-btn-wrapper {
+        grid-column: span 1;
+      }
+
+      .modal-container {
+        padding: 2rem;
+        margin: 1.5rem;
+      }
+      .modal-header-grid, .modal-gallery {
+        grid-template-columns: 1fr;
+      }
+      .modal-meta-list {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo">
+        <span class="brand-name">Nikkam Designs</span>
+        <span class="brand-subtitle">StudioX • Bengaluru</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Studio</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-cta-btn" onclick="openConsultationModal()">Book Consultation</button>
+      <div class="mobile-toggle" onclick="toggleMobileMenu()"><i class="ri-menu-3-line"></i></div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" alt="Luxury Modern Interior Architecture Architecture Studio Bengaluru">
+    </div>
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <span class="label-tag" style="color: rgba(255,255,255,0.85);">MODERN • MINIMAL • REFINED</span>
+      <h1 class="hero-title">Spaces, Refined.<br>Living, Elevated.</h1>
+      <p class="hero-subtitle">Nikkam Designs StudioX — Luxury Interior Design Studio in Bengaluru</p>
+      
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">Explore Our Work</a>
+        <button onclick="openConsultationModal()" class="btn-secondary">Book a Consultation</button>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="label-tag">About The Studio</span>
+          <h2 class="about-quote">Designed around the way you live.</h2>
+          <p class="about-text">
+            Nikkam Designs StudioX creates refined interiors where architecture, materials, lighting and functionality come together seamlessly.
+          </p>
+          <p class="about-text">
+            Based in Bengaluru, our approach prioritizes spatial clarity, tactility, and quiet elegance—crafting private sanctuaries and distinguished commercial spaces that stand outside transient trends.
+          </p>
+        </div>
+
+        <div class="about-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop" alt="Minimal Architectural Interior Design">
+          <div class="about-badge">
+            <p>“Quiet luxury lies in the harmony of light, pure geometry, and honest materials.”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects-section" id="work">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-tag">Selected Portfolio</span>
+        <h2 class="section-title">Architectural Works & Projects</h2>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="project-filters">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+        <button class="filter-btn" onclick="filterProjects('residential', this)">Residential</button>
+        <button class="filter-btn" onclick="filterProjects('commercial', this)">Commercial</button>
+        <button class="filter-btn" onclick="filterProjects('ongoing', this)">Ongoing Projects</button>
+      </div>
+
+      <!-- PROJECTS GRID -->
+      <div class="projects-grid" id="projectsContainer">
+        
+        <!-- Project 1: Bel Air Villa -->
+        <div class="project-card wide" data-category="residential" onclick="openProjectModal(0)">
+          <div class="project-img-container">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop" alt="Bel Air Villa Bengaluru">
+            <div class="project-card-overlay">
+              <span class="view-btn-hover">View Project Details</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <h3 class="project-title">Bel Air Private Residence</h3>
+            <span class="project-location">Sadashivanagar, Bengaluru</span>
+          </div>
+          <span class="project-category-tag">Residential • Luxury Residence</span>
+          <p class="project-desc">A subterranean luxury sanctuary engineered with Italian travertine, custom monolithic warm oak joinery, and concealed lighting design.</p>
+        </div>
+
+        <!-- Project 2: Modernist Penthouse -->
+        <div class="project-card narrow" data-category="residential" onclick="openProjectModal(1)">
+          <div class="project-img-container">
+            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1200&auto=format&fit=crop" alt="Modernist Penthouse">
+            <div class="project-card-overlay">
+              <span class="view-btn-hover">View Project Details</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <h3 class="project-title">The Minimal Penthouse</h3>
+            <span class="project-location">UB City Surroundings, Bengaluru</span>
+          </div>
+          <span class="project-category-tag">Residential • Living Spaces</span>
+          <p class="project-desc">Panoramic city views paired with raw micro-cement textures, soft linen textiles, and understated luxury furniture.</p>
+        </div>
+
+        <!-- Project 3: Executive Commercial Suite -->
+        <div class="project-card narrow" data-category="commercial" onclick="openProjectModal(2)">
+          <div class="project-img-container">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" alt="Executive Commercial Suite">
+            <div class="project-card-overlay">
+              <span class="view-btn-hover">View Project Details</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <h3 class="project-title">Aethel Private Headquarters</h3>
+            <span class="project-location">Indiranagar, Bengaluru</span>
+          </div>
+          <span class="project-category-tag">Commercial • Executive Office</span>
+          <p class="project-desc">A sophisticated hospitality-infused workspace featuring acoustic smoked glass partitions and bronze architectural details.</p>
+        </div>
+
+        <!-- Project 4: Contemporary Culinary Studio -->
+        <div class="project-card narrow" data-category="residential" onclick="openProjectModal(3)">
+          <div class="project-img-container">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop" alt="Custom Kitchen & Interior">
+            <div class="project-card-overlay">
+              <span class="view-btn-hover">View Project Details</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <h3 class="project-title">Custom Culinary Atelier</h3>
+            <span class="project-location">Koramangala, Bengaluru</span>
+          </div>
+          <span class="project-category-tag">Residential • Kitchen & Dining</span>
+          <p class="project-desc">Bespoke handleless minimalist cabinetry, fluted stone island, and hidden pocket doors designed for seamless entertaining.</p>
+        </div>
+
+        <!-- Project 5: Ongoing Site Progress -->
+        <div class="project-card narrow" data-category="ongoing" onclick="openProjectModal(4)">
+          <div class="project-img-container">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="On-site Construction">
+            <div class="project-card-overlay">
+              <span class="view-btn-hover">View Site Progress</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <h3 class="project-title">The Estate House (In Progress)</h3>
+            <span class="project-location">Whitefield, Bengaluru</span>
+          </div>
+          <span class="project-category-tag">Ongoing Projects • On-Site Construction</span>
+          <p class="project-desc">Current architectural execution phase detailing exposed board-formed concrete walls and custom steel frame installation.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-tag">Core Expertise</span>
+        <h2 class="section-title">Tailored Design Services</h2>
+      </div>
+
+      <div class="services-list">
+        
+        <div class="service-item">
+          <span class="service-num">01</span>
+          <h3 class="service-name">Interior Design</h3>
+          <p class="service-desc">Complete interior design concepts tailored to the client’s lifestyle, balancing aesthetics with spatial harmony.</p>
+        </div>
+
+        <div class="service-item">
+          <span class="service-num">02</span>
+          <h3 class="service-name">Space Planning</h3>
+          <p class="service-desc">Functional layouts designed around movement, comfort, ergonomics, and effortless natural room usability.</p>
+        </div>
+
+        <div class="service-item">
+          <span class="service-num">03</span>
+          <h3 class="service-name">Material & Finish Selection</h3>
+          <p class="service-desc">Curated materials, natural stone, timber species, tactile fabrics, and custom metalwork finishes.</p>
+        </div>
+
+        <div class="service-item">
+          <span class="service-num">04</span>
+          <h3 class="service-name">Custom Interiors</h3>
+          <p class="service-desc">Bespoke furniture, tailored architectural millwork, custom lighting, and personalized luxury accents.</p>
+        </div>
+
+        <div class="service-item">
+          <span class="service-num">05</span>
+          <h3 class="service-name">Project Execution</h3>
+          <p class="service-desc">End-to-end coordination, vendor management, site supervision, and precise execution from initial concept through hand-over.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN PHILOSOPHY SECTION -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container">
+      <div class="philosophy-grid">
+        <div>
+          <span class="label-tag" style="color: var(--accent-champagne);">Studio Philosophy</span>
+          <h2 class="philosophy-title">Less, but never ordinary.</h2>
+          <p style="font-size: 1.05rem; color: rgba(255,255,255,0.8); font-weight: 300; line-height: 1.8;">
+            We believe that true luxury does not demand attention; it commands presence through quiet perfection. Every curve, shadow, and tactile material is thoughtfully orchestrated.
+          </p>
+        </div>
+
+        <div class="philosophy-bullets">
+          <div class="philo-card">
+            <h5>Clean Architectural Forms</h5>
+            <p>Pure geometries and balanced proportions that frame uncluttered, tranquil environments.</p>
+          </div>
+
+          <div class="philo-card">
+            <h5>Timeless Materials</h5>
+            <p>Honest materials—natural stones, warm hardwoods, patinated metals—that age gracefully.</p>
+          </div>
+
+          <div class="philo-card">
+            <h5>Natural Light</h5>
+            <p>Sculpting rooms around light, shadows, and time of day to enhance mood and spatial depth.</p>
+          </div>
+
+          <div class="philo-card">
+            <h5>Functional Luxury</h5>
+            <p>Intelligent spatial flows that elevate daily routines into effortless sensory experiences.</p>
+          </div>
+
+          <div class="philo-card">
+            <h5>Refined Detailing</h5>
+            <p>Invisible flush joints, seamless transitions, and immaculate custom craftsmanship.</p>
+          </div>
+
+          <div class="philo-card">
+            <h5>Personalised Spaces</h5>
+            <p>Interiors intimately calibrated around individual lifestyles, values, and architectural contexts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-tag">Our Methodology</span>
+        <h2 class="section-title">The Design Journey</h2>
+      </div>
+
+      <div class="process-grid">
+        
+        <div class="process-card">
+          <div class="process-step-num">01</div>
+          <div>
+            <h4 class="process-step-title">DISCOVER</h4>
+            <p class="process-step-desc">Understand the client’s lifestyle, spatial requirements, functional desires, and overarching vision.</p>
+          </div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-num">02</div>
+          <div>
+            <h4 class="process-step-title">DEFINE</h4>
+            <p class="process-step-desc">Develop initial spatial planning, architectural moodboards, layout studies, and material direction.</p>
+          </div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-num">03</div>
+          <div>
+            <h4 class="process-step-title">DESIGN</h4>
+            <p class="process-step-desc">Refine every detail through precise CAD drawings, bespoke millwork details, finish schedules, and 3D visualisations.</p>
+          </div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-num">04</div>
+          <div>
+            <h4 class="process-step-title">DELIVER</h4>
+            <p class="process-step-desc">Coordinate meticulous on-site execution, vendor management, and bring the designed space seamlessly to life.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM / VISUAL JOURNAL -->
+  <section class="journal-section">
+    <div class="container">
+      <div class="journal-header">
+        <div>
+          <span class="label-tag">Visual Journal</span>
+          <h2 class="section-title" style="margin-bottom: 0;">From the Studio</h2>
+        </div>
+        <a href="https://instagram.com/nikkam_designsstudiox" target="_blank" class="insta-handle-link">
+          Follow @nikkam_designsstudiox <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+
+      <div class="insta-grid">
+        <div class="insta-card">
+          <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=800&auto=format&fit=crop" alt="Studio Moment Interior Detail">
+          <div class="insta-overlay"><i class="ri-instagram-line"></i></div>
+        </div>
+        <div class="insta-card">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" alt="Architectural Lighting Sample">
+          <div class="insta-overlay"><i class="ri-instagram-line"></i></div>
+        </div>
+        <div class="insta-card">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop" alt="Material Curation Travertine and Timber">
+          <div class="insta-overlay"><i class="ri-instagram-line"></i></div>
+        </div>
+        <div class="insta-card">
+          <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop" alt="Onsite Finishing Bengaluru Residence">
+          <div class="insta-overlay"><i class="ri-instagram-line"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION BANNER CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="cta-banner-title">Let’s create a space that feels unmistakably yours.</h2>
+      <p class="cta-banner-sub">Book a consultation with Nikkam Designs StudioX.</p>
+      
+      <div class="cta-btn-group">
+        <button onclick="openConsultationModal()" class="btn-primary">Book a Consultation</button>
+        <a href="https://wa.me/919900000000?text=Hello%20Nikkam%20Designs%20StudioX,%20I%20would%20like%20to%20discuss%20an%20interior%20design%20project." target="_blank" class="btn-secondary">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <div class="contact-info-box">
+          <div>
+            <span class="label-tag">Get In Touch</span>
+            <h2 class="section-title">Start a Conversation</h2>
+          </div>
+
+          <div class="contact-detail-item">
+            <h6>Studio Location</h6>
+            <p><strong>Nikkam Designs StudioX</strong><br>Bengaluru, Karnataka, India</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;"><em>By appointment only</em></p>
+          </div>
+
+          <div class="contact-detail-item">
+            <h6>Direct Inquiries</h6>
+            <p><a href="tel:+919900000000">+91 (Studio Phone)</a></p>
+            <p><a href="mailto:contact@nikkamdesignsstudiox.com">contact@nikkamdesignsstudiox.com</a></p>
+          </div>
+
+          <div class="contact-detail-item">
+            <h6>Social</h6>
+            <p><a href="https://instagram.com/nikkam_designsstudiox" target="_blank">Instagram: @nikkam_designsstudiox</a></p>
+          </div>
+        </div>
+
+        <div>
+          <form class="contact-form" id="consultationForm" onsubmit="handleFormSubmit(event)">
+            
+            <div class="form-group">
+              <label for="fullName">Name *</label>
+              <input type="text" id="fullName" class="form-control" placeholder="Your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNum">Phone *</label>
+              <input type="tel" id="phoneNum" class="form-control" placeholder="+91 00000 00000" required>
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddr">Email *</label>
+              <input type="email" id="emailAddr" class="form-control" placeholder="name@domain.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="projectType">Project Type *</label>
+              <select id="projectType" class="form-control" required>
+                <option value="" disabled selected>Select option</option>
+                <option value="Residential - Villa / Residence">Residential — Villa / Residence</option>
+                <option value="Residential - Penthouse / Apartment">Residential — Penthouse / Apartment</option>
+                <option value="Commercial - Office / Workspaces">Commercial — Office / Workspace</option>
+                <option value="Hospitality / Retail">Hospitality / Boutique Retail</option>
+                <option value="Custom Interiors">Custom Interior Detail</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Location *</label>
+              <input type="text" id="location" class="form-control" placeholder="e.g. Indiranagar, Sadashivanagar, Bengaluru" required>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Approximate Budget</label>
+              <select id="budget" class="form-control">
+                <option value="" disabled selected>Select range</option>
+                <option value="₹25 Lakhs - ₹50 Lakhs">₹25 Lakhs – ₹50 Lakhs</option>
+                <option value="₹50 Lakhs - ₹1 Crore">₹50 Lakhs – ₹1 Crore</option>
+                <option value="₹1 Crore +">₹1 Crore +</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="message">Project Description & Requirements</label>
+              <textarea id="message" class="form-control" placeholder="Tell us about your property, timeline, and spatial vision..."></textarea>
+            </div>
+
+            <div class="submit-btn-wrapper">
+              <button type="submit" class="btn-primary" style="width: 100%;">Request Consultation</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Nikkam Designs</span>
+          <span class="brand-subtitle" style="display: block; margin-top: 4px;">StudioX • Luxury Interior Design Studio</span>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 1rem;">Bengaluru, Karnataka, India</p>
+        </div>
+
+        <ul class="footer-nav">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">Studio</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://instagram.com/nikkam_designsstudiox" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Nikkam Designs StudioX. All Rights Reserved.</p>
+        <p>Quiet Luxury • Modern • Minimal • Refined</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAIL MODAL SCREEN -->
+  <div class="modal-backdrop" id="projectModal">
+    <div class="modal-container">
+      <span class="modal-close-btn" onclick="closeProjectModal()">&times;</span>
+      
+      <img src="" alt="Project Hero" class="modal-hero-img" id="modalHeroImg">
+
+      <div class="modal-header-grid">
+        <div>
+          <span class="label-tag" id="modalCategoryTag">Residential</span>
+          <h2 class="modal-title" id="modalTitle">Project Title</h2>
+          <p style="font-size: 1.05rem; color: var(--text-muted); font-weight: 300;" id="modalOverview">
+            Project Overview Description
+          </p>
+        </div>
+
+        <div class="modal-meta-list">
+          <div class="modal-meta-item">
+            <label>Location</label>
+            <span id="modalLocation">Bengaluru</span>
+          </div>
+          <div class="modal-meta-item">
+            <label>Scope</label>
+            <span id="modalScope">Full Interior Architecture</span>
+          </div>
+          <div class="modal-meta-item">
+            <label>Aesthetic</label>
+            <span>Modern Minimal Warm Luxury</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALLERY GRID -->
+      <div class="modal-gallery" id="modalGallery">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- MATERIALS BREAKDOWN -->
+      <div class="modal-materials">
+        <h4>Material Palette & Details</h4>
+        <div class="materials-tags" id="modalMaterials">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <button onclick="closeProjectModal(); openConsultationModal();" class="btn-primary">Discuss Your Project With Us</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // PROJECT DATA STORE (No invented stats, awards, or fake claims)
+    const projectsData = [
+      {
+        title: "Bel Air Private Residence",
+        category: "Residential • Luxury Residence",
+        catKey: "residential",
+        location: "Sadashivanagar, Bengaluru",
+        overview: "A subterranean luxury sanctuary engineered with Italian travertine, custom monolithic warm oak joinery, and concealed ambient lighting design. Spaces are arranged to feel expansive yet deeply grounded.",
+        heroImg: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
+        gallery: [
+          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop"
+        ],
+        materials: ["Navona Travertine", "Smoked European Oak", "Fluted Architectural Glass", "Custom Brushed Brass", "Belgian Linen Textiles"]
+      },
+      {
+        title: "The Minimal Penthouse",
+        category: "Residential • Living Spaces",
+        catKey: "residential",
+        location: "UB City Surroundings, Bengaluru",
+        overview: "Panoramic urban vistas framing a quiet interior palette. Features custom micro-cement accent walls, low-profile minimalist Italian seating, and bespoke lighting fixtures.",
+        heroImg: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1200&auto=format&fit=crop",
+        gallery: [
+          "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=800&auto=format&fit=crop"
+        ],
+        materials: ["Micro-Cement Plaster", "Walnut Veneer", "Matte Black Steel", "Wool & Silk Blend Floor Rugs"]
+      },
+      {
+        title: "Aethel Private Headquarters",
+        category: "Commercial • Executive Office",
+        catKey: "commercial",
+        location: "Indiranagar, Bengaluru",
+        overview: "A modern commercial suite that blends executive authority with acoustic comfort and residential warmth. Designed around seamless spatial flow and private meeting nooks.",
+        heroImg: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+        gallery: [
+          "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop"
+        ],
+        materials: ["Acoustic Fabric Paneling", "Anodized Aluminum", "Calacatta Quartz", "Warm Bronze Trim"]
+      },
+      {
+        title: "Custom Culinary Atelier",
+        category: "Residential • Kitchen & Dining",
+        catKey: "residential",
+        location: "Koramangala, Bengaluru",
+        overview: "A streamlined culinary environment focused on hidden integrated appliances, soft tactile surfaces, and functional luxury engineered for intimate dinner hosting.",
+        heroImg: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop",
+        gallery: [
+          "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800&auto=format&fit=crop"
+        ],
+        materials: ["Honed Granitic Stone", "Handleless Matte Lacquer", "Concealed LED Warm Strips", "Solid Ash Wood"]
+      },
+      {
+        title: "The Estate House (Site Progress)",
+        category: "Ongoing Projects • On-Site Construction",
+        catKey: "ongoing",
+        location: "Whitefield, Bengaluru",
+        overview: "A peek behind the scenes during the spatial structural phase. Emphasizing precision concrete structural framework, custom floor-to-ceiling glass reveals, and site coordination.",
+        heroImg: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
+        gallery: [
+          "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=800&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop"
+        ],
+        materials: ["Board-formed Architectural Concrete", "Structural Steel", "Double-Glazed Low-E Panes", "Reinforced Masonry"]
+      }
+    ];
+
+    // HEADER SCROLL EFFECT
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // FILTER PROJECTS
+    function filterProjects(category, btnElement) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // OPEN PROJECT MODAL
+    function openProjectModal(index) {
+      const p = projectsData[index];
+      if (!p) return;
+
+      document.getElementById('modalHeroImg').src = p.heroImg;
+      document.getElementById('modalTitle').textContent = p.title;
+      document.getElementById('modalCategoryTag').textContent = p.category;
+      document.getElementById('modalOverview').textContent = p.overview;
+      document.getElementById('modalLocation').textContent = p.location;
+      document.getElementById('modalScope').textContent = p.category.split('•')[1] || "Interior Architecture";
+
+      // Gallery Images
+      const galleryContainer = document.getElementById('modalGallery');
+      galleryContainer.innerHTML = p.gallery.map(img => `<img src="${img}" alt="Project Gallery Details">`).join('');
+
+      // Materials Tags
+      const materialsContainer = document.getElementById('modalMaterials');
+      materialsContainer.innerHTML = p.materials.map(mat => `<span class="mat-tag">${mat}</span>`).join('');
+
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // CLOSE PROJECT MODAL
+    function closeProjectModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // OPEN CONSULTATION MODAL / SCROLL TO FORM
+    function openConsultationModal() {
+      const contactSection = document.getElementById('contact');
+      if(contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('fullName').focus();
+      }
+    }
+
+    // HANDLE FORM SUBMISSION & WHATSAPP REDIRECT GENERATOR
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('fullName').value;
+      const phone = document.getElementById('phoneNum').value;
+      const type = document.getElementById('projectType').value;
+      const location = document.getElementById('location').value;
+      const budget = document.getElementById('budget').value;
+
+      alert(`Thank you, ${name}. Your consultation request has been received. Our studio will reach out to you shortly.`);
+      
+      // Optional preformatted WhatsApp redirect
+      const waText = encodeURIComponent(`Hello Nikkam Designs StudioX,\nMy Name: ${name}\nPhone: ${phone}\nProject Type: ${type}\nLocation: ${location}\nBudget: ${budget}`);
+      
+      // Reset form
+      document.getElementById('consultationForm').reset();
+    }
+
+    // MOBILE MENU TOGGLE
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.background = '#fbf9f5';
+        navLinks.style.padding = '2rem';
+        navLinks.style.borderBottom = '1px solid rgba(0,0,0,0.1)';
+      }
+    }
+  </script>
+</body>
+</html>
